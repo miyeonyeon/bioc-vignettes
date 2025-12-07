@@ -1,0 +1,84 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+
+/* Change the sidebar background color to white */
+.book .book-summary {
+  background-color: #ffffff !important; /* White */
+}
+
+/* Change the main content background to white */
+.book .book-body {
+  background-color: #ffffff !important; /* White */
+}
+
+/* Change the text color to dark grey for better readability */
+.book .book-body,
+.book .book-summary,
+.book .book-summary a {
+  color: #333333 !important; /* Dark grey text */
+}
+
+/* Change the sidebar title color */
+.book .book-summary h1 {
+  color: #333333 !important; /* Dark grey */
+}
+
+/* Change the navigation button colors */
+.book .book-header {
+  background-color: #ffffff !important; /* White */
+  border: none !important; /* Remove top bar border */
+}
+
+/* Change the search bar background */
+.book .book-summary .search input {
+  background-color: #ffffff !important; /* White */
+  color: #333333 !important; /* Dark grey text */
+}
+
+/* Change the sidebar navigation link hover color */
+.book .book-summary a:hover {
+  color: #007bff !important; /* Blue */
+}
+
+/* Change the progress bar color (optional) */
+.book .book-header .progress {
+  background-color: #cccccc !important; /* Light grey progress bar */
+}
+
+/* Change the left sidebar border color */
+/* Remove the top border of the book header */
+.book .book-summary {
+  border-right: none !important;
+  border-top: none !important;
+}
+
+/* Remove horizontal dividers in the left sidebar */
+.book .book-summary li.divider {
+  display: none !important;
+}
+
+
+/* Setting for bash chunks */
+pre.bash {
+    background-color: #1e1e1e !important;  /* Dark background */
+    color: #ffffff !important;  /* Force all text to white */
+    font-family: "Courier New", Courier, monospace !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+pre.bash span {
+    color: #ffffff !important;  /* Force all syntax elements to white */
+}

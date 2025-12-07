@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Applications | RNAshapeQCdocs</title>
+  <meta name="description" content="6 Applications | RNAshapeQCdocs" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Applications | RNAshapeQCdocs" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="miyeonyeon/RNAshapeQCdocs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Applications | RNAshapeQCdocs" />
+  
+  
+  
+
+<meta name="author" content="Miyeon Yeon and Won-Young Choi" />
+
+
+<meta name="date" content="2025-12-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-analysis.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/table1-1.0/table1_defaults.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Demo</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="data-description.html"><a href="data-description.html"><i class="fa fa-check"></i><b>2</b> Data Description</a></li>
+<li class="chapter" data-level="3" data-path="data-generation.html"><a href="data-generation.html"><i class="fa fa-check"></i><b>3</b> Data Generation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-generation.html"><a href="data-generation.html#bam-slicing"><i class="fa fa-check"></i><b>3.1</b> BAM slicing</a></li>
+<li class="chapter" data-level="3.2" data-path="data-generation.html"><a href="data-generation.html#pileup"><i class="fa fa-check"></i><b>3.2</b> Pileup</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="GeneBodyCoverage.html"><a href="GeneBodyCoverage.html"><i class="fa fa-check"></i><b>4</b> Data Processing</a></li>
+<li class="chapter" data-level="5" data-path="data-analysis.html"><a href="data-analysis.html"><i class="fa fa-check"></i><b>5</b> Data Analysis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-analysis.html"><a href="data-analysis.html#measures-by-rna-seq-protocol"><i class="fa fa-check"></i><b>5.1</b> Measures by RNA-seq protocol</a></li>
+<li class="chapter" data-level="5.2" data-path="data-analysis.html"><a href="data-analysis.html#SOI"><i class="fa fa-check"></i><b>5.2</b> Suboptimal/Optimal index</a></li>
+<li class="chapter" data-level="5.3" data-path="data-analysis.html"><a href="data-analysis.html#updated-gene-body-coverage"><i class="fa fa-check"></i><b>5.3</b> Updated gene body coverage</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>6</b> Applications</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="applications.html"><a href="applications.html#PCA"><i class="fa fa-check"></i><b>6.1</b> Principal component analysis</a></li>
+<li class="chapter" data-level="6.2" data-path="applications.html"><a href="applications.html#window-cv-heatmap"><i class="fa fa-check"></i><b>6.2</b> Window CV heatmap</a></li>
+<li class="chapter" data-level="6.3" data-path="applications.html"><a href="applications.html#sample-quality-summary"><i class="fa fa-check"></i><b>6.3</b> Sample quality summary</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RNAshapeQCdocs</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="applications" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Applications<a href="applications.html#applications" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="PCA" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Principal component analysis<a href="applications.html#PCA" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The wCV values directly affect to AUC in the restricted MCD when the fitted regression lines are very different per sample.
+Since AUC is used to get SOI, we can check how PC scores of wCV are related to SOI.
+After handling missing values, let’s keep genes having positive variance within samples.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="applications.html#cb22-1" tabindex="-1"></a>wCV.mat2 <span class="ot">&lt;-</span> wCV.mat</span>
+<span id="cb22-2"><a href="applications.html#cb22-2" tabindex="-1"></a>wCV.mat2[<span class="fu">is.na</span>(wCV.mat2)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb22-3"><a href="applications.html#cb22-3" tabindex="-1"></a>wCV.mat2 <span class="ot">&lt;-</span> wCV.mat2[<span class="fu">apply</span>(wCV.mat2, <span class="dv">1</span>, var)<span class="sc">!=</span><span class="dv">0</span>, ]</span></code></pre></div>
+<p><code>stats::prcomp()</code> function performs PCA, and its result can be applied to calculate <code>pc1_contributions</code> to figure out contributions of each gene to the PC1.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="applications.html#cb23-1" tabindex="-1"></a>pca_result <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(<span class="fu">t</span>(wCV.mat2), <span class="at">scale=</span><span class="cn">TRUE</span>)</span>
+<span id="cb23-2"><a href="applications.html#cb23-2" tabindex="-1"></a>pc1_contributions <span class="ot">&lt;-</span> <span class="fu">abs</span>(pca_result<span class="sc">$</span>rotation[, <span class="dv">1</span>])</span>
+<span id="cb23-3"><a href="applications.html#cb23-3" tabindex="-1"></a>top_genes <span class="ot">&lt;-</span> <span class="fu">order</span>(pc1_contributions, <span class="at">decreasing=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="window-cv-heatmap" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Window CV heatmap<a href="applications.html#window-cv-heatmap" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A heatmap from <a href="https://jokergoo.github.io/ComplexHeatmap-reference/book/index.html">ComplexHeatmap</a> helps to visualize patterns of the wCV matrix with genes and samples properties.
+To construct row and column annotations, additional variables can be added by matching genes and samples:</p>
+<ul>
+<li>AUC, PD, and SOI from <a href="data-analysis.html#SOI">Suboptimal/Optimal index</a></li>
+<li>PC1, PC2, and PC1 contributions from <a href="applications.html#PCA">Principal component analysis</a></li>
+</ul>
+<p>The columns are split as 2 clusters by dendrogram, which is corresponding to most of suboptimal samples.</p>
+<p><img src="figureAdd/Allianceex_wCVheatmap_v058-4.png" width="85%" height="85%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="sample-quality-summary" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Sample quality summary<a href="applications.html#sample-quality-summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>table1::table1()</code> function displays descriptive statistics by a categorical variable.
+We can simply review mean and range of sample properties by sample quality for general comparison.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="applications.html#cb24-1" tabindex="-1"></a><span class="fu">library</span>(table1)</span>
+<span id="cb24-2"><a href="applications.html#cb24-2" tabindex="-1"></a><span class="fu">table1</span>(</span>
+<span id="cb24-3"><a href="applications.html#cb24-3" tabindex="-1"></a>  <span class="sc">~</span> AUC <span class="sc">+</span> PD <span class="sc">+</span> RINs <span class="sc">+</span> RatioIntron <span class="sc">|</span> SOI, </span>
+<span id="cb24-4"><a href="applications.html#cb24-4" tabindex="-1"></a>  <span class="at">data =</span> SplAnnomat,</span>
+<span id="cb24-5"><a href="applications.html#cb24-5" tabindex="-1"></a>  <span class="at">render.continuous =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb24-6"><a href="applications.html#cb24-6" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">&quot;%.2f [%.2f, %.2f]&quot;</span>, <span class="fu">mean</span>(x, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="fu">min</span>(x, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="fu">max</span>(x, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
+<span id="cb24-7"><a href="applications.html#cb24-7" tabindex="-1"></a>  }</span>
+<span id="cb24-8"><a href="applications.html#cb24-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="Rtable1"><table class="Rtable1">
+<thead>
+<tr>
+<th class='rowlabel firstrow lastrow'></th>
+<th class='firstrow lastrow'><span class='stratlabel'>Optimal<br><span class='stratn'>(N=152)</span></span></th>
+<th class='firstrow lastrow'><span class='stratlabel'>Suboptimal<br><span class='stratn'>(N=19)</span></span></th>
+<th class='firstrow lastrow'><span class='stratlabel'>Overall<br><span class='stratn'>(N=171)</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='rowlabel firstrow lastrow'>AUC</td>
+<td class='firstrow lastrow'>0.48 [0.42, 0.59]</td>
+<td class='firstrow lastrow'>0.83 [0.67, 1.01]</td>
+<td class='firstrow lastrow'>0.52 [0.42, 1.01]</td>
+</tr>
+<tr>
+<td class='rowlabel firstrow lastrow'>PD</td>
+<td class='firstrow lastrow'>-0.23 [-2.25, 2.13]</td>
+<td class='firstrow lastrow'>6.79 [3.74, 10.34]</td>
+<td class='firstrow lastrow'>0.55 [-2.25, 10.34]</td>
+</tr>
+<tr>
+<td class='rowlabel firstrow'>RINs</td>
+<td class='firstrow'>5.77 [1.30, 9.20]</td>
+<td class='firstrow'>2.79 [1.10, 4.60]</td>
+<td class='firstrow'>5.44 [1.10, 9.20]</td>
+</tr>
+<tr>
+<td class='rowlabel lastrow'>Missing</td>
+<td class='lastrow'>3 (2.0%)</td>
+<td class='lastrow'>1 (5.3%)</td>
+<td class='lastrow'>4 (2.3%)</td>
+</tr>
+<tr>
+<td class='rowlabel firstrow lastrow'>RatioIntron</td>
+<td class='firstrow lastrow'>1.94 [0.46, 4.07]</td>
+<td class='firstrow lastrow'>1.32 [0.57, 2.80]</td>
+<td class='firstrow lastrow'>1.87 [0.46, 4.07]</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-analysis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-Applications.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

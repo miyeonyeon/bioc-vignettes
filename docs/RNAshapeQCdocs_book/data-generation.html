@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Data Generation | RNAshapeQCdocs</title>
+  <meta name="description" content="3 Data Generation | RNAshapeQCdocs" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Data Generation | RNAshapeQCdocs" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="miyeonyeon/RNAshapeQCdocs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Data Generation | RNAshapeQCdocs" />
+  
+  
+  
+
+<meta name="author" content="Miyeon Yeon and Won-Young Choi" />
+
+
+<meta name="date" content="2025-12-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-description.html"/>
+<link rel="next" href="GeneBodyCoverage.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/table1-1.0/table1_defaults.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Demo</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="data-description.html"><a href="data-description.html"><i class="fa fa-check"></i><b>2</b> Data Description</a></li>
+<li class="chapter" data-level="3" data-path="data-generation.html"><a href="data-generation.html"><i class="fa fa-check"></i><b>3</b> Data Generation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-generation.html"><a href="data-generation.html#bam-slicing"><i class="fa fa-check"></i><b>3.1</b> BAM slicing</a></li>
+<li class="chapter" data-level="3.2" data-path="data-generation.html"><a href="data-generation.html#pileup"><i class="fa fa-check"></i><b>3.2</b> Pileup</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="GeneBodyCoverage.html"><a href="GeneBodyCoverage.html"><i class="fa fa-check"></i><b>4</b> Data Processing</a></li>
+<li class="chapter" data-level="5" data-path="data-analysis.html"><a href="data-analysis.html"><i class="fa fa-check"></i><b>5</b> Data Analysis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-analysis.html"><a href="data-analysis.html#measures-by-rna-seq-protocol"><i class="fa fa-check"></i><b>5.1</b> Measures by RNA-seq protocol</a></li>
+<li class="chapter" data-level="5.2" data-path="data-analysis.html"><a href="data-analysis.html#SOI"><i class="fa fa-check"></i><b>5.2</b> Suboptimal/Optimal index</a></li>
+<li class="chapter" data-level="5.3" data-path="data-analysis.html"><a href="data-analysis.html#updated-gene-body-coverage"><i class="fa fa-check"></i><b>5.3</b> Updated gene body coverage</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>6</b> Applications</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="applications.html"><a href="applications.html#PCA"><i class="fa fa-check"></i><b>6.1</b> Principal component analysis</a></li>
+<li class="chapter" data-level="6.2" data-path="applications.html"><a href="applications.html#window-cv-heatmap"><i class="fa fa-check"></i><b>6.2</b> Window CV heatmap</a></li>
+<li class="chapter" data-level="6.3" data-path="applications.html"><a href="applications.html#sample-quality-summary"><i class="fa fa-check"></i><b>6.3</b> Sample quality summary</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RNAshapeQCdocs</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-generation" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Data Generation<a href="data-generation.html#data-generation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bam-slicing" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> BAM slicing<a href="data-generation.html#bam-slicing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The relevant reads can be extracted for efficient analysis on a subset of genes.
+<a href="https://physiology.med.cornell.edu/faculty/skrabanek/lab/angsd/lecture_notes/STARmanual.pdf"><em>STAR</em></a> and <a href="https://www.htslib.org/workflow/fastq.html"><em>samtools</em></a> enable output sorted alignments to <code>Aligned.out.sort.bam</code> file.
+For simple explanation of data generating steps, suppose that we only consider a case of gene <em>KEAP1</em> and 5 samples in the <code>bamfiles</code> folder.</p>
+<p>A comprehensive gene annotation file (GTF) <code>gencode.v36.annotation.gtf</code> can be downloaded at <a href="https://www.gencodegenes.org/human/"><em>GENCODE</em></a>.
+<a href="https://github.com/RacconC/gtftools"><em>gtftools</em></a> is able to save gene coordination and ID mappings in bed format as <code>gencode.v36.genes.bed</code> from the GTF file, and then genomic region for <em>KEAP1</em> be obtained as <code>genic_region.bed</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="data-generation.html#cb3-1" tabindex="-1"></a><span class="va">bedfile</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$base</span><span class="st">/gencode.v36.genes.bed&quot;</span></span>
+<span id="cb3-2"><a href="data-generation.html#cb3-2" tabindex="-1"></a><span class="va">genome_region</span><span class="op">=</span><span class="va">$(</span></span>
+<span id="cb3-3"><a href="data-generation.html#cb3-3" tabindex="-1"></a>  <span class="fu">grep</span> <span class="at">-P</span> <span class="va">$genename</span><span class="st">&quot;\t&quot;</span> <span class="va">$bedfile</span> <span class="dt">\</span></span>
+<span id="cb3-4"><a href="data-generation.html#cb3-4" tabindex="-1"></a>  <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f5</span></span>
+<span id="cb3-5"><a href="data-generation.html#cb3-5" tabindex="-1"></a><span class="va">)</span></span>
+<span id="cb3-6"><a href="data-generation.html#cb3-6" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="data-generation.html#cb3-7" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-v</span> gene=<span class="st">&quot;</span><span class="va">$genename</span><span class="st">&quot;</span> <span class="at">-F</span><span class="st">&#39;\t&#39;</span> <span class="st">&#39;</span></span>
+<span id="cb3-8"><a href="data-generation.html#cb3-8" tabindex="-1"></a><span class="st">  $7 == gene {print $1, $2, $3}</span></span>
+<span id="cb3-9"><a href="data-generation.html#cb3-9" tabindex="-1"></a><span class="st">&#39;</span> OFS=<span class="st">&#39;\t&#39;</span> <span class="st">&quot;</span><span class="va">$bedfile</span><span class="st">&quot;</span> <span class="op">&gt;</span> <span class="va">$geneDir</span>/bamslice/genic_region.bed</span></code></pre></div>
+<p>The samtools and BEDTools are required, and inputs to get a sliced BAM for the specific gene and sample are given:</p>
+<ul>
+<li>Gene of interest</li>
+<li>Genomic coordinates to extract reads</li>
+<li>Input directory for BAM files</li>
+<li>Output directory for sliced BAM files</li>
+<li>Prefix for output BAM files</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="data-generation.html#cb4-1" tabindex="-1"></a><span class="va">genename</span><span class="op">=</span><span class="st">&quot;KEAP1&quot;</span></span>
+<span id="cb4-2"><a href="data-generation.html#cb4-2" tabindex="-1"></a><span class="va">genome_region</span><span class="op">=</span><span class="st">&quot;chr19:10486124-10503558&quot;</span></span>
+<span id="cb4-3"><a href="data-generation.html#cb4-3" tabindex="-1"></a><span class="va">ibampath</span><span class="op">=</span><span class="st">&quot;/bamfiles/A001_Aligned.out.sort.bam&quot;</span></span>
+<span id="cb4-4"><a href="data-generation.html#cb4-4" tabindex="-1"></a><span class="va">bamsliceDir</span><span class="op">=</span><span class="st">&quot;/bamslice&quot;</span></span>
+<span id="cb4-5"><a href="data-generation.html#cb4-5" tabindex="-1"></a><span class="va">ibamslice</span><span class="op">=</span><span class="st">&quot;KEAP1_A001_slice&quot;</span></span></code></pre></div>
+<p>We define 3 cases to select reads within genome region of a gene:</p>
+<ul>
+<li><code>*_contained.bam</code>: both paired reads are in the genome region (black line)</li>
+<li><code>*_overlap_Sonly.bam</code>: one of paired reads overlaps with the start genomic position (red line)</li>
+<li><code>*_overlap_Eonly.bam</code>: one of paired reads overlaps with the end genomic position (green line)</li>
+</ul>
+<p><img src="figureAdd/BAMsliceEx.png" width="90%" height="90%" style="display: block; margin: auto;" /></p>
+<p>The samtools can extract paired-end reads in <code>*_1.bam</code> and <code>*_2.bam</code> from BAM files and merge as <code>*_temp.bam</code>.
+Based on overlap with the gene, intersectBed from BEDTools identifies reads and start and end positions of the gene are created in <code>*_genes_S.bed</code> and <code>*_genes_E.bed</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="data-generation.html#cb5-1" tabindex="-1"></a><span class="co"># Slice BAM by read orientation (flags 147 and 99)</span></span>
+<span id="cb5-2"><a href="data-generation.html#cb5-2" tabindex="-1"></a><span class="ex">samtools</span> view <span class="at">-b</span> <span class="at">-f</span> 147 <span class="va">${ibampath}</span> <span class="va">$genome_region</span> <span class="dt">\</span></span>
+<span id="cb5-3"><a href="data-generation.html#cb5-3" tabindex="-1"></a>  <span class="op">&gt;</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_1.bam</span>
+<span id="cb5-4"><a href="data-generation.html#cb5-4" tabindex="-1"></a><span class="ex">samtools</span> view <span class="at">-b</span> <span class="at">-f</span> 99 <span class="va">${ibampath}</span> <span class="va">$genome_region</span> <span class="dt">\</span></span>
+<span id="cb5-5"><a href="data-generation.html#cb5-5" tabindex="-1"></a>  <span class="op">&gt;</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_2.bam</span>
+<span id="cb5-6"><a href="data-generation.html#cb5-6" tabindex="-1"></a><span class="ex">samtools</span> merge <span class="at">-f</span> <span class="dt">\</span></span>
+<span id="cb5-7"><a href="data-generation.html#cb5-7" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_temp.bam <span class="dt">\</span></span>
+<span id="cb5-8"><a href="data-generation.html#cb5-8" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_1.bam <span class="dt">\</span></span>
+<span id="cb5-9"><a href="data-generation.html#cb5-9" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_2.bam</span>
+<span id="cb5-10"><a href="data-generation.html#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="data-generation.html#cb5-11" tabindex="-1"></a><span class="co"># Intersect with genic region</span></span>
+<span id="cb5-12"><a href="data-generation.html#cb5-12" tabindex="-1"></a><span class="ex">intersectBed</span> <span class="dt">\</span></span>
+<span id="cb5-13"><a href="data-generation.html#cb5-13" tabindex="-1"></a>  <span class="at">-a</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_temp.bam <span class="dt">\</span></span>
+<span id="cb5-14"><a href="data-generation.html#cb5-14" tabindex="-1"></a>  <span class="at">-b</span> <span class="va">$bamsliceDir</span>/genic_region.bed <span class="dt">\</span></span>
+<span id="cb5-15"><a href="data-generation.html#cb5-15" tabindex="-1"></a>  <span class="op">&gt;</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_overlap.bam</span>
+<span id="cb5-16"><a href="data-generation.html#cb5-16" tabindex="-1"></a><span class="ex">intersectBed</span> <span class="dt">\</span></span>
+<span id="cb5-17"><a href="data-generation.html#cb5-17" tabindex="-1"></a>  <span class="at">-a</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_temp.bam <span class="dt">\</span></span>
+<span id="cb5-18"><a href="data-generation.html#cb5-18" tabindex="-1"></a>  <span class="at">-b</span> <span class="va">$bamsliceDir</span>/genic_region.bed <span class="dt">\</span></span>
+<span id="cb5-19"><a href="data-generation.html#cb5-19" tabindex="-1"></a>  <span class="at">-f</span> 1.0 <span class="dt">\</span></span>
+<span id="cb5-20"><a href="data-generation.html#cb5-20" tabindex="-1"></a>  <span class="op">&gt;</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_contained.bam</span>
+<span id="cb5-21"><a href="data-generation.html#cb5-21" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="data-generation.html#cb5-22" tabindex="-1"></a><span class="co"># Start (S) / End (E) positions as 1bp BED</span></span>
+<span id="cb5-23"><a href="data-generation.html#cb5-23" tabindex="-1"></a><span class="fu">awk</span> <span class="st">&#39;{print $1&quot;\t&quot;$2&quot;\t&quot;$2}&#39;</span> <span class="va">$bamsliceDir</span>/genic_region.bed <span class="dt">\</span></span>
+<span id="cb5-24"><a href="data-generation.html#cb5-24" tabindex="-1"></a>  <span class="op">&gt;</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_genes_S.bed</span>
+<span id="cb5-25"><a href="data-generation.html#cb5-25" tabindex="-1"></a><span class="fu">awk</span> <span class="st">&#39;{print $1&quot;\t&quot;$3&quot;\t&quot;$3}&#39;</span> <span class="va">$bamsliceDir</span>/genic_region.bed <span class="dt">\</span></span>
+<span id="cb5-26"><a href="data-generation.html#cb5-26" tabindex="-1"></a>  <span class="op">&gt;</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_genes_E.bed</span></code></pre></div>
+<p>After identifying reads overlapping only the start or end of gene, we can merge with reads fully contained within the gene to make a preliminary BAM
+file as <code>*_pre.bam</code>.
+The final files are a sorted BAM file <code>*.bam</code> and a BAM index file <code>*.bam.bai</code>, and removing all intermediate files are recommended to optimize storage.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="data-generation.html#cb6-1" tabindex="-1"></a><span class="co"># Reads overlapping start but not end -&gt; S-only</span></span>
+<span id="cb6-2"><a href="data-generation.html#cb6-2" tabindex="-1"></a><span class="ex">intersectBed</span> <span class="dt">\</span></span>
+<span id="cb6-3"><a href="data-generation.html#cb6-3" tabindex="-1"></a>  <span class="at">-a</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_overlap.bam <span class="dt">\</span></span>
+<span id="cb6-4"><a href="data-generation.html#cb6-4" tabindex="-1"></a>  <span class="at">-b</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_genes_S.bed <span class="dt">\</span></span>
+<span id="cb6-5"><a href="data-generation.html#cb6-5" tabindex="-1"></a>  <span class="kw">|</span> <span class="ex">intersectBed</span> <span class="dt">\</span></span>
+<span id="cb6-6"><a href="data-generation.html#cb6-6" tabindex="-1"></a>    <span class="at">-a</span> stdin <span class="dt">\</span></span>
+<span id="cb6-7"><a href="data-generation.html#cb6-7" tabindex="-1"></a>    <span class="at">-b</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_genes_E.bed <span class="dt">\</span></span>
+<span id="cb6-8"><a href="data-generation.html#cb6-8" tabindex="-1"></a>    <span class="at">-v</span> <span class="dt">\</span></span>
+<span id="cb6-9"><a href="data-generation.html#cb6-9" tabindex="-1"></a>  <span class="op">&gt;</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_overlap_Sonly.bam</span>
+<span id="cb6-10"><a href="data-generation.html#cb6-10" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="data-generation.html#cb6-11" tabindex="-1"></a><span class="co"># Reads overlapping end but not start -&gt; E-only</span></span>
+<span id="cb6-12"><a href="data-generation.html#cb6-12" tabindex="-1"></a><span class="ex">intersectBed</span> <span class="dt">\</span></span>
+<span id="cb6-13"><a href="data-generation.html#cb6-13" tabindex="-1"></a>  <span class="at">-a</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_overlap.bam <span class="dt">\</span></span>
+<span id="cb6-14"><a href="data-generation.html#cb6-14" tabindex="-1"></a>  <span class="at">-b</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_genes_E.bed <span class="dt">\</span></span>
+<span id="cb6-15"><a href="data-generation.html#cb6-15" tabindex="-1"></a>  <span class="kw">|</span> <span class="ex">intersectBed</span> <span class="dt">\</span></span>
+<span id="cb6-16"><a href="data-generation.html#cb6-16" tabindex="-1"></a>    <span class="at">-a</span> stdin <span class="dt">\</span></span>
+<span id="cb6-17"><a href="data-generation.html#cb6-17" tabindex="-1"></a>    <span class="at">-b</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_genes_S.bed <span class="dt">\</span></span>
+<span id="cb6-18"><a href="data-generation.html#cb6-18" tabindex="-1"></a>    <span class="at">-v</span> <span class="dt">\</span></span>
+<span id="cb6-19"><a href="data-generation.html#cb6-19" tabindex="-1"></a>  <span class="op">&gt;</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_overlap_Eonly.bam</span>
+<span id="cb6-20"><a href="data-generation.html#cb6-20" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="data-generation.html#cb6-21" tabindex="-1"></a><span class="co"># Merge all parts</span></span>
+<span id="cb6-22"><a href="data-generation.html#cb6-22" tabindex="-1"></a><span class="ex">samtools</span> merge <span class="at">-o</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_pre.bam <span class="dt">\</span></span>
+<span id="cb6-23"><a href="data-generation.html#cb6-23" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_contained.bam <span class="dt">\</span></span>
+<span id="cb6-24"><a href="data-generation.html#cb6-24" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_overlap_Sonly.bam <span class="dt">\</span></span>
+<span id="cb6-25"><a href="data-generation.html#cb6-25" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_overlap_Eonly.bam</span>
+<span id="cb6-26"><a href="data-generation.html#cb6-26" tabindex="-1"></a></span>
+<span id="cb6-27"><a href="data-generation.html#cb6-27" tabindex="-1"></a><span class="co"># Sort &amp; Index</span></span>
+<span id="cb6-28"><a href="data-generation.html#cb6-28" tabindex="-1"></a><span class="ex">samtools</span> sort <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_pre.bam <span class="dt">\</span></span>
+<span id="cb6-29"><a href="data-generation.html#cb6-29" tabindex="-1"></a>  <span class="op">&gt;</span> <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>.bam</span>
+<span id="cb6-30"><a href="data-generation.html#cb6-30" tabindex="-1"></a><span class="ex">samtools</span> index <span class="dt">\</span></span>
+<span id="cb6-31"><a href="data-generation.html#cb6-31" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>.bam <span class="dt">\</span></span>
+<span id="cb6-32"><a href="data-generation.html#cb6-32" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>.bam.bai</span>
+<span id="cb6-33"><a href="data-generation.html#cb6-33" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="data-generation.html#cb6-34" tabindex="-1"></a><span class="co"># Cleanup temporary files</span></span>
+<span id="cb6-35"><a href="data-generation.html#cb6-35" tabindex="-1"></a><span class="fu">rm</span> <span class="dt">\</span></span>
+<span id="cb6-36"><a href="data-generation.html#cb6-36" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_1.bam <span class="dt">\</span></span>
+<span id="cb6-37"><a href="data-generation.html#cb6-37" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_2.bam <span class="dt">\</span></span>
+<span id="cb6-38"><a href="data-generation.html#cb6-38" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_temp.bam <span class="dt">\</span></span>
+<span id="cb6-39"><a href="data-generation.html#cb6-39" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_overlap.bam <span class="dt">\</span></span>
+<span id="cb6-40"><a href="data-generation.html#cb6-40" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_contained.bam <span class="dt">\</span></span>
+<span id="cb6-41"><a href="data-generation.html#cb6-41" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_pre.bam <span class="dt">\</span></span>
+<span id="cb6-42"><a href="data-generation.html#cb6-42" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_genes_S.bed <span class="dt">\</span></span>
+<span id="cb6-43"><a href="data-generation.html#cb6-43" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_genes_E.bed <span class="dt">\</span></span>
+<span id="cb6-44"><a href="data-generation.html#cb6-44" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_overlap_Sonly.bam <span class="dt">\</span></span>
+<span id="cb6-45"><a href="data-generation.html#cb6-45" tabindex="-1"></a>  <span class="va">$bamsliceDir</span>/<span class="va">${ibamslice}</span>_overlap_Eonly.bam</span></code></pre></div>
+</div>
+<div id="pileup" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Pileup<a href="data-generation.html#pileup" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>SCISSOR package<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> can be applied to generate pileup from BAM file, region info, and coverage plots based on its <a href="https://hyochoi.github.io/SCISSOR/tutorial/">tutorial</a>.
+From the GTF file, <code>build_gaf()</code> function creates a region info file named <code>SCISSOR_gaf.txt</code> and shows the full path of the file. The file contains <code>regions</code> by <code>gene_name</code> and <code>gene_id</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-generation.html#cb7-1" tabindex="-1"></a><span class="fu">library</span>(SCISSOR)</span>
+<span id="cb7-2"><a href="data-generation.html#cb7-2" tabindex="-1"></a><span class="fu">build_gaf</span>(<span class="at">GTF.file=</span><span class="st">&quot;./dataPrep/gencode.v36.annotation.gtf&quot;</span>)</span></code></pre></div>
+<p>For instance, we can make pileup and compare coverage plots of <em>part_intron</em> and <em>only_exon</em> using gene <em>KEAP1</em> and the 5 samples.
+If 5 sliced BAM files are saved in the <code>bamslice</code> folder, the full file path of them can be set as <code>BAMfiles</code>.
+<code>gen_pileup()</code> function saves <code>pileup</code>, <code>regions</code>, and <code>Ranges</code> for <code>Gene</code>, which become inputs to plot pileup figures.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-generation.html#cb8-1" tabindex="-1"></a>BAMfiles <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path=</span><span class="fu">paste0</span>(<span class="st">&quot;../bamslice&quot;</span>), <span class="at">pattern=</span><span class="st">&quot;</span><span class="sc">\\</span><span class="st">.sort.bam$&quot;</span>, <span class="at">full.names=</span><span class="cn">TRUE</span>)</span>
+<span id="cb8-2"><a href="data-generation.html#cb8-2" tabindex="-1"></a>caseIDs <span class="ot">&lt;-</span> <span class="fu">substr</span>(<span class="fu">basename</span>(BAMfiles), <span class="at">start=</span><span class="dv">6</span>, <span class="at">stop=</span><span class="dv">22</span>)</span>
+<span id="cb8-3"><a href="data-generation.html#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="data-generation.html#cb8-4" tabindex="-1"></a>gen_pileup <span class="ot">=</span> <span class="cf">function</span>(Gene, regionsFile, BAMfiles, caseIDs, outputdir) {</span>
+<span id="cb8-5"><a href="data-generation.html#cb8-5" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="data-generation.html#cb8-6" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span>Gene <span class="sc">%in%</span> regionsFile<span class="sc">$</span>gene_name) {</span>
+<span id="cb8-7"><a href="data-generation.html#cb8-7" tabindex="-1"></a>    <span class="fu">stop</span>(Gene, <span class="st">&quot; is not in gene_name of SCISSOR_gaf.txt&quot;</span>)</span>
+<span id="cb8-8"><a href="data-generation.html#cb8-8" tabindex="-1"></a>  }</span>
+<span id="cb8-9"><a href="data-generation.html#cb8-9" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="data-generation.html#cb8-10" tabindex="-1"></a>  regions <span class="ot">&lt;-</span> <span class="fu">as.character</span>(regionsFile[<span class="fu">match</span>(Gene, regionsFile<span class="sc">$</span>gene_name), <span class="fu">c</span>(<span class="st">&quot;regions&quot;</span>)])</span>
+<span id="cb8-11"><a href="data-generation.html#cb8-11" tabindex="-1"></a>  Ranges <span class="ot">=</span> SCISSOR<span class="sc">::</span><span class="fu">get_Ranges</span>(<span class="at">Gene=</span>Gene, <span class="at">regions=</span>regions, <span class="at">outputType=</span><span class="st">&quot;part_intron&quot;</span>)</span>
+<span id="cb8-12"><a href="data-generation.html#cb8-12" tabindex="-1"></a>  pileup <span class="ot">=</span> SCISSOR<span class="sc">::</span><span class="fu">read_BAM</span>(<span class="at">BAMfiles=</span>BAMfiles, <span class="at">caseIDs=</span>caseIDs, <span class="at">regions=</span>regions)</span>
+<span id="cb8-13"><a href="data-generation.html#cb8-13" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="data-generation.html#cb8-14" tabindex="-1"></a>  <span class="fu">save</span>(pileup, regions, Ranges, <span class="at">file=</span><span class="fu">paste0</span>(outputdir, Gene, <span class="st">&quot;_pileup_part_intron.RData&quot;</span>))</span>
+<span id="cb8-15"><a href="data-generation.html#cb8-15" tabindex="-1"></a>}</span>
+<span id="cb8-16"><a href="data-generation.html#cb8-16" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="data-generation.html#cb8-17" tabindex="-1"></a><span class="fu">gen_pileup</span>(</span>
+<span id="cb8-18"><a href="data-generation.html#cb8-18" tabindex="-1"></a>  <span class="at">Gene        =</span> <span class="st">&quot;KEAP1&quot;</span>,</span>
+<span id="cb8-19"><a href="data-generation.html#cb8-19" tabindex="-1"></a>  <span class="at">regionsFile =</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="at">file=</span><span class="st">&quot;./dataPrep/SCISSOR_gaf.txt&quot;</span>),</span>
+<span id="cb8-20"><a href="data-generation.html#cb8-20" tabindex="-1"></a>  <span class="at">BAMfiles    =</span> BAMfiles,</span>
+<span id="cb8-21"><a href="data-generation.html#cb8-21" tabindex="-1"></a>  <span class="at">caseIDs     =</span> caseIDs,</span>
+<span id="cb8-22"><a href="data-generation.html#cb8-22" tabindex="-1"></a>  <span class="at">outputdir   =</span> <span class="fu">paste0</span>(<span class="st">&quot;../pileup/&quot;</span>)</span>
+<span id="cb8-23"><a href="data-generation.html#cb8-23" tabindex="-1"></a>)</span>
+<span id="cb8-24"><a href="data-generation.html#cb8-24" tabindex="-1"></a></span>
+<span id="cb8-25"><a href="data-generation.html#cb8-25" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb8-26"><a href="data-generation.html#cb8-26" tabindex="-1"></a><span class="co"># part_intron</span></span>
+<span id="cb8-27"><a href="data-generation.html#cb8-27" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">paste0</span>(<span class="st">&quot;../pileup/KEAP1_pileup_part_intron.RData&quot;</span>))</span>
+<span id="cb8-28"><a href="data-generation.html#cb8-28" tabindex="-1"></a><span class="fu">plot_pileup</span>(</span>
+<span id="cb8-29"><a href="data-generation.html#cb8-29" tabindex="-1"></a>  <span class="at">Pileup   =</span> <span class="fu">log10</span>(pileup<span class="sc">+</span><span class="dv">1</span>), </span>
+<span id="cb8-30"><a href="data-generation.html#cb8-30" tabindex="-1"></a>  <span class="at">case     =</span> caseIDs, </span>
+<span id="cb8-31"><a href="data-generation.html#cb8-31" tabindex="-1"></a>  <span class="at">Ranges   =</span> Ranges, </span>
+<span id="cb8-32"><a href="data-generation.html#cb8-32" tabindex="-1"></a>  <span class="at">logcount =</span> <span class="dv">1</span>, </span>
+<span id="cb8-33"><a href="data-generation.html#cb8-33" tabindex="-1"></a>  <span class="at">main     =</span> <span class="st">&quot;part_intron&quot;</span></span>
+<span id="cb8-34"><a href="data-generation.html#cb8-34" tabindex="-1"></a>)</span>
+<span id="cb8-35"><a href="data-generation.html#cb8-35" tabindex="-1"></a></span>
+<span id="cb8-36"><a href="data-generation.html#cb8-36" tabindex="-1"></a><span class="co"># only_exon</span></span>
+<span id="cb8-37"><a href="data-generation.html#cb8-37" tabindex="-1"></a>pileupData <span class="ot">=</span> <span class="fu">build_pileup</span>(</span>
+<span id="cb8-38"><a href="data-generation.html#cb8-38" tabindex="-1"></a>  <span class="at">Pileup     =</span> pileup, </span>
+<span id="cb8-39"><a href="data-generation.html#cb8-39" tabindex="-1"></a>  <span class="at">case       =</span> caseIDs, </span>
+<span id="cb8-40"><a href="data-generation.html#cb8-40" tabindex="-1"></a>  <span class="at">regions    =</span> regions, </span>
+<span id="cb8-41"><a href="data-generation.html#cb8-41" tabindex="-1"></a>  <span class="at">inputType  =</span> <span class="st">&quot;part_intron&quot;</span>, </span>
+<span id="cb8-42"><a href="data-generation.html#cb8-42" tabindex="-1"></a>  <span class="at">outputType =</span> <span class="st">&quot;only_exon&quot;</span></span>
+<span id="cb8-43"><a href="data-generation.html#cb8-43" tabindex="-1"></a>)</span>
+<span id="cb8-44"><a href="data-generation.html#cb8-44" tabindex="-1"></a>geneRanges <span class="ot">=</span> <span class="fu">get_Ranges</span>(</span>
+<span id="cb8-45"><a href="data-generation.html#cb8-45" tabindex="-1"></a>  <span class="at">Gene       =</span> Ranges<span class="sc">$</span>Gene, </span>
+<span id="cb8-46"><a href="data-generation.html#cb8-46" tabindex="-1"></a>  <span class="at">regions    =</span> regions, </span>
+<span id="cb8-47"><a href="data-generation.html#cb8-47" tabindex="-1"></a>  <span class="at">outputType =</span> <span class="st">&quot;only_exon&quot;</span></span>
+<span id="cb8-48"><a href="data-generation.html#cb8-48" tabindex="-1"></a>)</span>
+<span id="cb8-49"><a href="data-generation.html#cb8-49" tabindex="-1"></a><span class="fu">plot_pileup</span>(</span>
+<span id="cb8-50"><a href="data-generation.html#cb8-50" tabindex="-1"></a>  <span class="at">Pileup   =</span> <span class="fu">log10</span>(pileupData<span class="sc">+</span><span class="dv">1</span>), </span>
+<span id="cb8-51"><a href="data-generation.html#cb8-51" tabindex="-1"></a>  <span class="at">case     =</span> caseIDs, </span>
+<span id="cb8-52"><a href="data-generation.html#cb8-52" tabindex="-1"></a>  <span class="at">Ranges   =</span> geneRanges, </span>
+<span id="cb8-53"><a href="data-generation.html#cb8-53" tabindex="-1"></a>  <span class="at">logcount =</span> <span class="dv">1</span>, </span>
+<span id="cb8-54"><a href="data-generation.html#cb8-54" tabindex="-1"></a>  <span class="at">main     =</span> <span class="st">&quot;only_exon&quot;</span></span>
+<span id="cb8-55"><a href="data-generation.html#cb8-55" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="figureAdd/Allianceex_KEAP1pileup_v008.png" width="100%" height="100%" style="display: block; margin: auto;" /></p>
+<p>The <em>only_exon</em> figure has 10 exons after filtering introns from <em>part_intron</em>.
+The start and end positions for exon (e) and intronic part (ip) per exon are matched with the pileup plot and we only consider exon to measure sample quality.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-generation.html#cb9-1" tabindex="-1"></a>Ranges<span class="sc">$</span>gRanges</span></code></pre></div>
+<pre><code>##        ip.start  e.start    e.end   ip.end
+## exon1  10503558 10503558 10503241 10503187
+## exon2  10503186 10503186 10503093 10502897
+## exon3  10502896 10502896 10502697 10502688
+## exon4  10502687 10502687 10502388 10502039
+## exon5  10500429 10500080 10499395 10499046
+## exon6  10493066 10492717 10492573 10492263
+## exon7  10492262 10492262 10491577 10491228
+## exon8  10490202 10489853 10489648 10489436
+## exon9  10489435 10489435 10489192 10488843
+## exon10 10487167 10486818 10486125 10486125</code></pre>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Choi, H.Y., Jo, H., Zhao, X. et al. SCISSOR: a framework for identifying structural changes in RNA transcripts. <em>Nat Commun</em> 12, 286 (2021). <a href="https://doi.org/10.1038/s41467-020-20593-3" class="uri">https://doi.org/10.1038/s41467-020-20593-3</a><a href="data-generation.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-description.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="GeneBodyCoverage.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-DataGeneration.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
