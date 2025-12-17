@@ -2,9 +2,11 @@
 
 This repository hosts public documentation for my personal research software projects.
 
-For each package (`packageName`), the following documents are available:
-- **Tutorial**: https://miyeonyeon.github.io/bioc-vignettes/packageName_intro.html
-- **User Manual**: https://miyeonyeon.github.io/bioc-vignettes/packageName_book/
+**Available packages**: `RNAshapeQC`
+
+For each package, the following documents are available:
+- **Tutorial**: https://miyeonyeon.github.io/bioc-vignettes/{package}_intro.html
+- **User Manual**: https://miyeonyeon.github.io/bioc-vignettes/{package}_book/
 
 Authorship and contributor roles are defined within each individual package.
 
