@@ -6,7 +6,7 @@ This repository hosts public documentation for my personal research software pro
 
 For each package, the following documents are available:
 - **Tutorial**: https://miyeonyeon.github.io/bioc-vignettes/{package}_intro.html
-- **User Manual**: https://miyeonyeon.github.io/bioc-vignettes/{package}_book/
+- **User Manual**: https://miyeonyeon.github.io/bioc-vignettes/{package}docs_book/
 
 Authorship and contributor roles are defined within each individual package.
 
