@@ -11,7 +11,7 @@
 
 <meta name="author" content="Minjeong Kim and Miyeon Yeon" />
 
-<meta name="date" content="2026-01-28" />
+<meta name="date" content="2026-01-29" />
 
 <title>EGFRmSig: A Tutorial for Applying an EGFR Mutation Signature Score</title>
 
@@ -703,7 +703,7 @@ function toggle_visibility(id1) {
 
 <h1 class="title toc-ignore">EGFRmSig: A Tutorial for Applying an EGFR Mutation Signature Score</h1>
 <p class="author-name">Minjeong Kim and Miyeon Yeon</p>
-<h4 class="date">2026-01-28</h4>
+<h4 class="date">2026-01-29</h4>
 
 </div>
 
@@ -745,6 +745,8 @@ function toggle_visibility(id1) {
 <li><span class="math inline">\(x_{g,i}\)</span>: expression for gene <span class="math inline">\(g\)</span> and sample <span class="math inline">\(i\)</span></li>
 <li><span class="math inline">\(s \in \{bronch, mag, sqm\}\)</span>: LUAD expression subtype (bronch, bronchioid; mag, magnoid; sqm, squamoid)</li>
 <li><span class="math inline">\(y \in \{WT, mt\}\)</span>: EGFR mutation status (WT, wild-type; mt, mutant)</li>
+<li><span class="math inline">\(n_y = |\mathscr{I}_{y}|,\)</span> where <span class="math inline">\(|\mathscr{I}_{y}|\)</span> denotes all samples with mutation status <span class="math inline">\(y\)</span></li>
+<li><span class="math inline">\(n_{s,y} = |\mathscr{I}_{s,y}|,\)</span> where <span class="math inline">\(|\mathscr{I}_{s,y}|\)</span> denotes samples with subtype <span class="math inline">\(s\)</span> and mutation status <span class="math inline">\(y\)</span></li>
 </ul></li>
 <li><p><code>mean_subtype.i_*</code>: subtype-adjusted centroids (equal weights)
 <span class="math display">\[
@@ -875,13 +877,16 @@ plot_mSig(res=res)</code></pre>
 #&gt; [1] EGFRmSig_0.1.0   BiocStyle_2.32.1
 #&gt; 
 #&gt; loaded via a namespace (and not attached):
-#&gt;  [1] sass_0.4.9          stringi_1.8.4       digest_0.6.37       magrittr_2.0.3      evaluate_0.24.0     bookdown_0.46       pkgload_1.4.0       fastmap_1.2.0      
-#&gt;  [9] rprojroot_2.1.1     jsonlite_1.8.8      pkgbuild_1.4.4      sessioninfo_1.2.2   brio_1.1.5          urlchecker_1.0.1    promises_1.3.0      BiocManager_1.30.25
-#&gt; [17] purrr_1.0.2         jquerylib_0.1.4     cli_3.6.3           shiny_1.9.1         rlang_1.1.4         ellipsis_0.3.2      remotes_2.5.0       withr_3.0.1        
-#&gt; [25] cachem_1.1.0        yaml_2.3.10         devtools_2.4.5      tools_4.4.1         memoise_2.0.1       httpuv_1.6.15       vctrs_0.6.5         R6_2.5.1           
-#&gt; [33] mime_0.12           lifecycle_1.0.4     stringr_1.5.1       fs_1.6.4            htmlwidgets_1.6.4   usethis_3.0.0       miniUI_0.1.1.1      desc_1.4.3         
-#&gt; [41] bslib_0.8.0         later_1.3.2         rsconnect_1.7.0     glue_1.7.0          profvis_0.3.8       Rcpp_1.0.13         highr_0.11          xfun_0.50          
-#&gt; [49] rstudioapi_0.16.0   knitr_1.48          xtable_1.8-4        htmltools_0.5.8.1   rmarkdown_2.28      testthat_3.2.1.1    compiler_4.4.1</code></pre>
+#&gt;  [1] sass_0.4.9          stringi_1.8.4       digest_0.6.37       magrittr_2.0.3      evaluate_0.24.0     bookdown_0.46      
+#&gt;  [7] pkgload_1.4.0       fastmap_1.2.0       rprojroot_2.1.1     jsonlite_1.8.8      pkgbuild_1.4.4      sessioninfo_1.2.2  
+#&gt; [13] brio_1.1.5          urlchecker_1.0.1    promises_1.3.0      BiocManager_1.30.25 purrr_1.0.2         jquerylib_0.1.4    
+#&gt; [19] cli_3.6.3           shiny_1.9.1         rlang_1.1.4         ellipsis_0.3.2      remotes_2.5.0       withr_3.0.1        
+#&gt; [25] cachem_1.1.0        yaml_2.3.10         devtools_2.4.5      tools_4.4.1         memoise_2.0.1       httpuv_1.6.15      
+#&gt; [31] vctrs_0.6.5         R6_2.5.1            mime_0.12           lifecycle_1.0.4     stringr_1.5.1       fs_1.6.4           
+#&gt; [37] htmlwidgets_1.6.4   usethis_3.0.0       miniUI_0.1.1.1      desc_1.4.3          bslib_0.8.0         later_1.3.2        
+#&gt; [43] rsconnect_1.7.0     glue_1.7.0          profvis_0.3.8       Rcpp_1.0.13         highr_0.11          xfun_0.50          
+#&gt; [49] rstudioapi_0.16.0   knitr_1.48          xtable_1.8-4        htmltools_0.5.8.1   rmarkdown_2.28      testthat_3.2.1.1   
+#&gt; [55] compiler_4.4.1</code></pre>
 <!-- [^2]: Dabney AR. ClaNC: point-and-click software for classifying microarrays to nearest centroids. _Bioinformatics_. 2006;22(1):122-3. https://doi.org/10.1093/bioinformatics/bti756 -->
 <!-- [^3]: Dabney AR. Classification of microarrays to nearest centroids. _Bioinformatics_. 2005;21(22):4148-54. https://doi.org/10.1093/bioinformatics/bti681 -->
 </div>
