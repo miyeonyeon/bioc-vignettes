@@ -5,8 +5,8 @@ This repository hosts public documentation for my personal research software pro
 **Available packages**: 
 | Package | Description | Documentation |
 |---------|-------|---------------|
-| [RNAshapeQC](github.com/hyochoi/RNAshapeQC) | RNA coverage-shape-based quality control metrics | [Tutorial](https://miyeonyeon.github.io/bioc-vignettes/RNAshapeQC_intro.html) · [User Manual](https://miyeonyeon.github.io/bioc-vignettes/RNAshapeQCdocs_book/) |
-| [EGFRmSig](github.com/minjeongjaykim/EGFRmSig) | LUAD EGFR mSig score calculation | [Tutorial](https://miyeonyeon.github.io/bioc-vignettes/EGFRmSig_intro.html) |
+| [RNAshapeQC](https://github.com/hyochoi/RNAshapeQC) | RNA coverage-shape-based quality control metrics | [Tutorial](https://miyeonyeon.github.io/bioc-vignettes/RNAshapeQC_intro.html) · [User Manual](https://miyeonyeon.github.io/bioc-vignettes/RNAshapeQCdocs_book/) |
+| [EGFRmSig](https://github.com/minjeongjaykim/EGFRmSig) | LUAD EGFR mSig score calculation | [Tutorial](https://miyeonyeon.github.io/bioc-vignettes/EGFRmSig_intro.html) |
 
 <!-- For each package, the following documents are available:
 - **Tutorial**: https://miyeonyeon.github.io/bioc-vignettes/{package}_intro.html
